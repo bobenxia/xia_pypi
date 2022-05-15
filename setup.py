@@ -9,6 +9,8 @@ setuptools.setup(
     author="xia",
     author_email="xiazheng1996@126.com",
     description="xia pypi",
+    long_description=long_description,
+    long_description_content_type="text/markdown",
     url="https://github.com/bobenxia/xia_pypi",
     classifiers=[
         "Programming Language :: Python :: 3",
