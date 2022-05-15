@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="xia_pypi",
-    version="0.0.1",
+    version="0.0.2",
     author="xia",
     author_email="xiazheng1996@126.com",
     description="xia pypi",

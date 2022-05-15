@@ -28,13 +28,12 @@ jobs:
         python-version: '3.8'
     - name: Install dependencies
       run: |
-        python3 -m pip install --upgrade build
-        python3 -m pip install --user --upgrade twine
-    - name: Build and Publish package
-      env:
-        TWINE_USERNAME: __token__
-        TWINE_PASSWORD: ${{ secrets.MY_PYPI_TEST_API_TOKEN }}
-      run: |
-        python3 -m build
-        python3 -m twine upload --repository testpypi dist/*
-
+        python -m pip install --upgrade pip
+        pip install build
+    - name: Build package
+      run: python -m build
+    - name: Publish package
+      uses: pypa/gh-action-pypi-publish@27b31702a0e7fc50959f5ad993c78deac1bdfc29
+      with:
+        user: __token__
+        password: ${{ secrets.MY_PYPI_TEST_API_TOKEN }}
